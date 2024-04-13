@@ -12,6 +12,14 @@ base {
 
 repositories {
 	maven {
+		name = 'GeckoLib'
+		url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+		content {
+			includeGroupByRegex("software\\.bernie.*")
+			includeGroup("com.eliotlash.mclib")
+		}
+	}
+	maven {
 		url "https://maven.rotgruengelb.net/releases"
 	}
 	mavenCentral()
@@ -28,6 +36,7 @@ dependencies {
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation(annotationProcessor("net.rotgruengelb:nixienaut:${project.nixienaut_version}"))
+	modImplementation "software.bernie.geckolib:geckolib-fabric-1.20.4:${project.geckolib_version}"
 }
 
 processResources {
@@ -35,13 +44,15 @@ processResources {
 	inputs.property "minecraft_version", project.minecraft_version
 	inputs.property "loader_version", project.loader_version
 	inputs.property "nixienaut_version", project.nixienaut_version
+	inputs.property "geckolib_version", project.geckolib_version
 	filteringCharset "UTF-8"
 
 	filesMatching("fabric.mod.json") {
 		expand "version": project.version,
 				"minecraft_version": project.minecraft_version,
 				"loader_version": project.loader_version,
-				"nixienaut_version": project.nixienaut_version
+				"nixienaut_version": project.nixienaut_version,
+				"geckolib_version": project.geckolib_version
 	}
 }
 
