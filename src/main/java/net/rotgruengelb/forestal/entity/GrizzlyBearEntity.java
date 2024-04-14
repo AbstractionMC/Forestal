@@ -10,6 +10,9 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -48,14 +51,20 @@ public class GrizzlyBearEntity extends AnimalEntity implements GeoEntity {
 		this.playSound(SoundEvents.ENTITY_POLAR_BEAR_STEP, 0.15f, 1.0f);
 	}
 
+	public boolean isBreedingItem(ItemStack stack) {
+		return stack.isOf(Items.SWEET_BERRIES);
+	}
+
 	@Override
 	public void initGoals() {
 		super.initGoals();
 		this.goalSelector.add(0, new SwimGoal(this));
-		this.goalSelector.add(4, new FollowParentGoal(this, 1.25));
-		this.goalSelector.add(5, new WanderAroundGoal(this, 1.0));
-		this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 6.0f));
-		this.goalSelector.add(7, new LookAroundGoal(this));
+		this.goalSelector.add(1, new EscapeDangerGoal(this, 1.4));
+		this.goalSelector.add(2, new AnimalMateGoal(this, 1.1));
+		this.goalSelector.add(3, new TemptGoal(this, 1.1, Ingredient.ofItems(Items.SWEET_BERRIES), false));
+		this.goalSelector.add(4, new FollowParentGoal(this, 1.15));
+		this.goalSelector.add(5, new LookAtEntityGoal(this, PlayerEntity.class, 6.0f));
+		this.goalSelector.add(6, new LookAroundGoal(this));
 	}
 
 	@Override
@@ -71,10 +80,12 @@ public class GrizzlyBearEntity extends AnimalEntity implements GeoEntity {
 		return SoundEvents.ENTITY_POLAR_BEAR_HURT;
 	}
 
-	@Override
-	protected SoundEvent getDeathSound() {
-		return SoundEvents.ENTITY_POLAR_BEAR_DEATH;
+	public boolean isAsleep() {
+		return false;
 	}
+
+	@Override
+	protected SoundEvent getDeathSound() { return SoundEvents.ENTITY_POLAR_BEAR_DEATH; }
 
 	@Override
 	public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
@@ -94,7 +105,5 @@ public class GrizzlyBearEntity extends AnimalEntity implements GeoEntity {
 	}
 
 	@Override
-	public AnimatableInstanceCache getAnimatableInstanceCache() {
-		return cache;
-	}
+	public AnimatableInstanceCache getAnimatableInstanceCache() { return cache; }
 }

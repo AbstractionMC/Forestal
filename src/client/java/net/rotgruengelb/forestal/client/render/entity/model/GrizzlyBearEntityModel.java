@@ -17,8 +17,11 @@ public class GrizzlyBearEntityModel extends GeoModel<GrizzlyBearEntity> {
 	}
 
 	@Override
-	public Identifier getTextureResource(GrizzlyBearEntity animatable) {
-		return new Identifier(Forestal.MOD_ID, "textures/entity/grizzly_bear.png");
+	public Identifier getTextureResource(GrizzlyBearEntity grizzlyBear) {
+		if (grizzlyBear.isAsleep()) {
+			return new Identifier(Forestal.MOD_ID, "textures/entity/grizzly_bear/grizzly_bear_sleeping.png");
+		}
+		return new Identifier(Forestal.MOD_ID, "textures/entity/grizzly_bear/grizzly_bear_normal.png");
 	}
 
 	@Override
