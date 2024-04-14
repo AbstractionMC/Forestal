@@ -11,7 +11,8 @@ import net.rotgruengelb.forestal.Forestal;
 
 public class ForestalBlocks {
 
-	public static final Block ZONE_BLOCK = registerBlock("grizzly_plushie", new PlushieBlock(FabricBlockSettings.create()
+	public static final Block GRIZZLY_PLUSHIE = registerBlock("grizzly_plushie",
+			new PlushieBlock(FabricBlockSettings.create()
 			.nonOpaque()));
 
 	private static Block registerBlockNoItem(String name, Block block) {
@@ -28,6 +29,6 @@ public class ForestalBlocks {
 	}
 
 	public static void registerModBlocks() {
-		Forestal.LOGGER.debug("Registering LandscapeBlocks for " + Forestal.MOD_ID);
+		Forestal.LOGGER.debug("Registering ForestalBlocks for " + Forestal.MOD_ID);
 	}
 }
