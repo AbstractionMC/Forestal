@@ -1,5 +1,6 @@
 package net.rotgruengelb.forestal.entity;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -16,5 +17,7 @@ public class ForestalEntities {
 
 	public static void registerModEntities() {
 		Forestal.LOGGER.debug("Registering ForestalEntities for " + Forestal.MOD_ID);
+
+		FabricDefaultAttributeRegistry.register(ForestalEntities.GRIZZLY_BEAR, GrizzlyBearEntity.createGrizzlyBearAttributes());
 	}
 }

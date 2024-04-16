@@ -10,12 +10,12 @@
 						"vector": ["Math.sin((query.anim_time + 0.1) * 180) * 1.5", 0, 0]
 					},
 					"position": {
-						"vector": [0, "Math.sin((query.anim_time - 0.0) * 180) * 0.4", 0]
+						"vector": [0, "-1+Math.sin((query.anim_time - 0.0) * 180) * 0.4", 0]
 					}
 				},
 				"body": {
 					"position": {
-						"vector": [0, "Math.sin((query.anim_time - 0.0) * 180) * 0.4", 0]
+						"vector": [0, "-1+Math.sin((query.anim_time - 0.0) * 180) * 0.4", 0]
 					}
 				}
 			}
@@ -112,6 +112,11 @@
 				"Grizzly": {
 					"position": {
 						"vector": [0, -7, 0]
+					}
+				},
+				"body": {
+					"position": {
+						"vector": [0, "Math.sin((query.anim_time - 0.0) * 120) * 0.4", 0]
 					}
 				}
 			}

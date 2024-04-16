@@ -1,0 +1,13 @@
+{
+	"replace": false,
+	"values": [
+		{
+			"id": "#forestal:spawns_entity_grizzly_bear/common",
+			"required": false
+		},
+		{
+			"id": "#forestal:spawns_entity_grizzly_bear/rare",
+			"required": false
+		}
+	]
+}

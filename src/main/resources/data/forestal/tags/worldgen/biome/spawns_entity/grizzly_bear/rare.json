@@ -1,0 +1,21 @@
+{
+	"replace": false,
+	"values": [
+		{
+			"id": "#c:snowy_plains",
+			"required": false
+		},
+		{
+			"id": "minecraft:windswept_gravelly_hills",
+			"required": false
+		},
+		{
+			"id": "minecraft:frozen_river",
+			"required": false
+		},
+		{
+			"id": "minecraft:ice_spikes",
+			"required": false
+		}
+	]
+}

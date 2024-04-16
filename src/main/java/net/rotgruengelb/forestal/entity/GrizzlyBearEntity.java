@@ -2,6 +2,7 @@ package net.rotgruengelb.forestal.entity;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -13,10 +14,13 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -38,6 +42,13 @@ public class GrizzlyBearEntity extends AnimalEntity implements GeoEntity {
 				.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 20.0)
 				.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
 				.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 6.0);
+	}
+
+	public static boolean isValidGrizzlyBearSpawn(EntityType<GrizzlyBearEntity> grizzlyBearEntityEntityType, ServerWorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
+		boolean bl = SpawnReason.isTrialSpawner(spawnReason) || AnimalEntity.isLightLevelValidForNaturalSpawn(world, pos);
+		return (world.getBlockState(pos.down())
+				.isIn(BlockTags.ANIMALS_SPAWNABLE_ON) || world.getBlockState(pos.down())
+				.isIn(BlockTags.ICE)) && bl;
 	}
 
 	@Nullable

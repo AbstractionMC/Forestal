@@ -13,6 +13,8 @@ import net.minecraft.util.Identifier;
 import net.rotgruengelb.forestal.Forestal;
 import net.rotgruengelb.forestal.entity.ForestalEntities;
 
+import static net.rotgruengelb.forestal.block.ForestalBlocks.GRIZZLY_PLUSHIE;
+
 public class ForestalItems {
 	public static final Item GRIZZLY_BEAR_SPAWN_EGG = registerItem("grizzly_bear_spawn_egg", new SpawnEggItem(ForestalEntities.GRIZZLY_BEAR, 0x966240, 0x553a28, new FabricItemSettings()));
 
@@ -22,6 +24,7 @@ public class ForestalItems {
 
 	public static void addItemsToItemGroup() {
 		addToItemGroup(ItemGroups.SPAWN_EGGS, GRIZZLY_BEAR_SPAWN_EGG);
+		addToItemGroup(ItemGroups.FUNCTIONAL, GRIZZLY_PLUSHIE.asItem());
 	}
 
 	private static void addToItemGroup(RegistryKey<ItemGroup> group, Item item) {

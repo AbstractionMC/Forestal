@@ -6,14 +6,14 @@ import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.rotgruengelb.forestal.Forestal;
 
 public class ForestalBlocks {
 
-	public static final Block GRIZZLY_PLUSHIE = registerBlock("grizzly_plushie",
-			new PlushieBlock(FabricBlockSettings.create()
-			.nonOpaque()));
+	public static final Block GRIZZLY_PLUSHIE = registerBlock("grizzly_plushie", new PlushieBlock(FabricBlockSettings.create()
+			.nonOpaque().breakInstantly().noBlockBreakParticles().sounds(BlockSoundGroup.WOOL)));
 
 	private static Block registerBlockNoItem(String name, Block block) {
 		return Registry.register(Registries.BLOCK, new Identifier(Forestal.MOD_ID, name), block);
