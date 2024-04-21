@@ -7,7 +7,6 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
@@ -19,7 +18,6 @@ import net.minecraft.world.WorldView;
 
 public class PlushieBlock extends HorizontalFacingBlock implements Waterloggable {
 
-	public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 	protected static final VoxelShape SHAPE = Block.createCuboidShape(4.0, 0.0, 4.0, 12.0, 10.0, 12.0);
 	protected static final VoxelShape COLLISION_SHAPE = Block.createCuboidShape(4.0, 0.0, 4.0, 12.0, 8.0, 12.0);
@@ -64,16 +62,16 @@ public class PlushieBlock extends HorizontalFacingBlock implements Waterloggable
 
 	@Override
 	public BlockState getPlacementState(ItemPlacementContext ctx) {
-		BlockState blockState = this.getDefaultState();
-		FluidState fluidState = ctx.getWorld().getFluidState(ctx.getBlockPos());
-		blockState = blockState.with(FACING, ctx.getHorizontalPlayerFacing());
-		return blockState.with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
+		BlockState blockState = this.getDefaultState()
+				.with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos())
+						.getFluid() == Fluids.WATER);
+		return blockState.with(FACING, ctx.getHorizontalPlayerFacing());
 	}
 
 	@Override
 
 	public FluidState getFluidState(BlockState state) {
-		if (state.get(WATERLOGGED).booleanValue()) {
+		if (state.get(WATERLOGGED)) {
 			return Fluids.WATER.getStill(false);
 		}
 		return super.getFluidState(state);

@@ -1,0 +1,30 @@
+{
+	"parent": "forestal:forest/root",
+	"display": {
+		"icon": {
+			"item": "forestal:grizzly_bear_hair"
+		},
+		"title": "Bear-ber Shop",
+		"description": "Use a brush to collect a grizzly bears hair.",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"forestal:grizzly_bear_hair"
+						]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {},
+	"sends_telemetry_event": false
+}

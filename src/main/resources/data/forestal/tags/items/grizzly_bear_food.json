@@ -1,0 +1,29 @@
+{
+	"replace": false,
+	"values": [
+		{
+			"id": "minecraft:cod",
+			"required": false
+		},
+		{
+			"id": "minecraft:salmon",
+			"required": false
+		},
+		{
+			"id": "minecraft:cooked_cod",
+			"required": false
+		},
+		{
+			"id": "minecraft:cooked_salmon",
+			"required": false
+		},
+		{
+			"id": "minecraft:sweet_berries",
+			"required": false
+		},
+		{
+			"id": "minecraft:glow_berries",
+			"required": false
+		}
+	]
+}

@@ -17,6 +17,7 @@ import static net.rotgruengelb.forestal.block.ForestalBlocks.GRIZZLY_PLUSHIE;
 
 public class ForestalItems {
 	public static final Item GRIZZLY_BEAR_SPAWN_EGG = registerItem("grizzly_bear_spawn_egg", new SpawnEggItem(ForestalEntities.GRIZZLY_BEAR, 0x966240, 0x553a28, new FabricItemSettings()));
+	public static final Item GRIZZLY_BEAR_HAIR = registerItem("grizzly_bear_hair", new Item(new FabricItemSettings()));
 
 	private static Item registerItem(String name, Item item) {
 		return Registry.register(Registries.ITEM, new Identifier(Forestal.MOD_ID, name), item);

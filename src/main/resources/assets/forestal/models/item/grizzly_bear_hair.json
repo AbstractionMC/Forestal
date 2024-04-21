@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "forestal:item/grizzly_bear_hair"
+	}
+}

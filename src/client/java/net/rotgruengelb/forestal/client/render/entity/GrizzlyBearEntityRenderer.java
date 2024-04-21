@@ -17,17 +17,19 @@ public class GrizzlyBearEntityRenderer extends GeoEntityRenderer<GrizzlyBearEnti
 
 	@Override
 	public Identifier getTextureLocation(GrizzlyBearEntity grizzlyBear) {
-		if (grizzlyBear.isAsleep()) {
+		if (grizzlyBear.isSleeping()) {
 			return new Identifier(Forestal.MOD_ID, "textures/entity/grizzly_bear/grizzly_bear_sleeping.png");
 		}
 		return new Identifier(Forestal.MOD_ID, "textures/entity/grizzly_bear/grizzly_bear_normal.png");
 	}
 
 	@Override
-	public void render(GrizzlyBearEntity grizzlyBear, float entityYaw, float partialTick,
-			MatrixStack poseStack, VertexConsumerProvider bufferSource, int packedLight) {
+	public void render(GrizzlyBearEntity grizzlyBear, float entityYaw, float partialTick, MatrixStack poseStack, VertexConsumerProvider bufferSource, int packedLight) {
 		if (grizzlyBear.isBaby()) {
 			poseStack.scale(0.6F, 0.6F, 0.6F);
+		}
+		if (grizzlyBear.isSleeping()) {
+			poseStack.translate(0, -0.5, 0);
 		}
 		super.render(grizzlyBear, entityYaw, partialTick, poseStack, bufferSource, packedLight);
 	}

@@ -22,6 +22,9 @@ public class ForestalTags {
 
 	public static class Items {
 
+		public static final TagKey<Item> GRIZZLY_BEAR_BRUSH = of("grizzly_bear_brush");
+		public static final TagKey<Item> GRIZZLY_BEAR_FOOD = of("grizzly_bear_food");
+
 		private static TagKey<Item> of(String id) {
 			return TagKey.of(RegistryKeys.ITEM, new Identifier(Forestal.MOD_ID, id));
 		}

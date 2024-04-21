@@ -1,0 +1,25 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:spruce_log"
+		},
+		"title": "Forests",
+		"description": "",
+		"background": "minecraft:textures/block/podzol_top.png",
+		"show_toast": false,
+		"announce_to_chat": false
+	},
+	"criteria": {
+		"": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"tag": "minecraft:logs"
+					}
+				]
+			}
+		}
+	},
+	"sends_telemetry_event": false
+}

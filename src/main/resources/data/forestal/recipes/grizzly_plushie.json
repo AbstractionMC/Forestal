@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"pattern": [
+		"h h",
+		"hwh",
+		"hhh"
+	],
+	"key": {
+		"h": {
+			"item": "forestal:grizzly_bear_hair"
+		},
+		"w": {
+			"item": "minecraft:brown_wool"
+		}
+	},
+	"result": {
+		"item": "forestal:grizzly_plushie"
+	}
+}
