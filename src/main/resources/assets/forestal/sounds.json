@@ -1,4 +1,20 @@
 {
+	"music_disc.forestal.reverb": {
+		"sounds": [
+			{
+				"name": "forestal:records/reverb",
+				"stream": true
+			}
+		]
+	},
+	"music_disc.forestal.sunrays": {
+		"sounds": [
+			{
+				"name": "forestal:records/sunrays",
+				"stream": true
+			}
+		]
+	},
 	"entity.forestal.grizzly_bear.ambient": {
 		"sounds": [
 			"minecraft:mob/polarbear/idle1",

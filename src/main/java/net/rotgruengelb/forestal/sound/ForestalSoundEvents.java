@@ -13,6 +13,8 @@ public class ForestalSoundEvents {
 	public static final SoundEvent ENTITY_GRIZZLY_BEAR_AMBIENT_BABY = registerSoundEvent("entity.forestal.grizzly_bear.ambient_baby");
 	public static final SoundEvent ENTITY_GRIZZLY_BEAR_HURT = registerSoundEvent("entity.forestal.grizzly_bear.hurt");
 	public static final SoundEvent ENTITY_GRIZZLY_BEAR_DEATH = registerSoundEvent("entity.forestal.grizzly_bear.death");
+	public static final SoundEvent MUSIC_DISC_REVERB = registerSoundEvent("music_disc.forestal.reverb");
+	public static final SoundEvent MUSIC_DISC_SUNRAYS = registerSoundEvent("music_disc.forestal.sunrays");
 
 	private static SoundEvent registerSoundEvent(String id) {
 		return registerSoundEvent(new Identifier(Forestal.MOD_ID, id));

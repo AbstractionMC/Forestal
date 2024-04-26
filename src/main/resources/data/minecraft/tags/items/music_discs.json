@@ -1,0 +1,13 @@
+{
+	"replace": false,
+	"values": [
+		{
+			"id": "forestal:music_disc_reverb",
+			"required": false
+		},
+		{
+			"id": "forestal:music_disc_sunrays",
+			"required": false
+		}
+	]
+}

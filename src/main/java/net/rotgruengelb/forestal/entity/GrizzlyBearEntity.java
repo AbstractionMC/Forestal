@@ -18,7 +18,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.ActionResult;
@@ -66,14 +65,14 @@ public class GrizzlyBearEntity extends AnimalEntity implements GeoEntity {
 	}
 
 	void setSleeping(boolean sleeping) {
-		this.setFoxFlag(SLEEPING_FLAG, sleeping);
+		this.setGrizzlyBearFlag(SLEEPING_FLAG, sleeping);
 	}
 
 	private boolean getGrizzlyBearFlag(int bitmask) {
 		return (this.dataTracker.get(GRIZZLY_BEAR_FLAGS) & bitmask) != 0;
 	}
 
-	private void setFoxFlag(int mask, boolean value) {
+	private void setGrizzlyBearFlag(int mask, boolean value) {
 		if (value) {
 			this.dataTracker.set(GRIZZLY_BEAR_FLAGS, (byte) (this.dataTracker.get(GRIZZLY_BEAR_FLAGS) | mask));
 		} else {
@@ -122,7 +121,7 @@ public class GrizzlyBearEntity extends AnimalEntity implements GeoEntity {
 	@Override
 	public void tick() {
 		super.tick();
-		if (this.canMoveVoluntarily() && this.isTouchingWater()) {
+		if (this.canMoveVoluntarily() && this.isTouchingWater() || this.getWorld().isDay()) {
 			this.setSleeping(false);
 		}
 	}

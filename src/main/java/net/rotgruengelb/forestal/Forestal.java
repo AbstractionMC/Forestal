@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.rotgruengelb.forestal.block.ForestalBlocks;
 import net.rotgruengelb.forestal.entity.ForestalEntities;
 import net.rotgruengelb.forestal.item.ForestalItems;
+import net.rotgruengelb.forestal.particle.ForestalParticleTypes;
 import net.rotgruengelb.forestal.sound.ForestalSoundEvents;
 import net.rotgruengelb.forestal.world.gen.ForestalWorldGeneration;
 import org.slf4j.Logger;
@@ -21,5 +22,6 @@ public class Forestal implements ModInitializer {
 		ForestalItems.registerModItems();
 		ForestalWorldGeneration.generateModWorldGeneration();
 		ForestalSoundEvents.registerModSoundEvents();
+		ForestalParticleTypes.registerModParticleTypes();
 	}
 }
