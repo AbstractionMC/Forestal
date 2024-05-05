@@ -7,10 +7,10 @@
 			}
 		]
 	},
-	"music_disc.forestal.sunrays": {
+	"music_disc.forestal.foolishly": {
 		"sounds": [
 			{
-				"name": "forestal:records/sunrays",
+				"name": "forestal:records/foolishly",
 				"stream": true
 			}
 		]

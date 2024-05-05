@@ -17,9 +17,10 @@ import static net.rotgruengelb.forestal.block.ForestalBlocks.GRIZZLY_PLUSHIE;
 
 public class ForestalItems {
 	public static final Item GRIZZLY_BEAR_SPAWN_EGG = registerItem("grizzly_bear_spawn_egg", new SpawnEggItem(ForestalEntities.GRIZZLY_BEAR, 0x966240, 0x553a28, new FabricItemSettings()));
+	//	public static final Item DEER_SPAWN_EGG = registerItem("deer_spawn_egg", new SpawnEggItem(ForestalEntities.DEER, 0x966240, 0x553a28, new FabricItemSettings()));
 	public static final Item GRIZZLY_BEAR_HAIR = registerItem("grizzly_bear_hair", new Item(new FabricItemSettings()));
 	public static final Item MUSIC_DISC_REVERB = registerMusicDisc("reverb", 14, ForestalSoundEvents.MUSIC_DISC_REVERB, 79);
-	public static final Item MUSIC_DISC_SUNRAYS = registerMusicDisc("sunrays", 15, ForestalSoundEvents.MUSIC_DISC_SUNRAYS, 240);
+	public static final Item MUSIC_DISC_SUNRAYS = registerMusicDisc("foolishly", 15, ForestalSoundEvents.MUSIC_DISC_FOOLISHLY, 191);
 
 	private static Item registerItem(String name, Item item) {
 		return Registry.register(Registries.ITEM, new Identifier(Forestal.MOD_ID, name), item);

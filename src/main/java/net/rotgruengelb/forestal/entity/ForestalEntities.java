@@ -14,10 +14,14 @@ public class ForestalEntities {
 
 	public static final EntityType<GrizzlyBearEntity> GRIZZLY_BEAR = Registry.register(Registries.ENTITY_TYPE, new Identifier(Forestal.MOD_ID, "grizzly_bear"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, GrizzlyBearEntity::new)
 			.dimensions(EntityDimensions.fixed(1.5f, 1.5f)).build());
+//	public static final EntityType<DeerEntity> DEER = Registry.register(Registries.ENTITY_TYPE, new Identifier(Forestal.MOD_ID, "deer"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, DeerEntity::new)
+//			.dimensions(EntityDimensions.fixed(1.5f, 1.5f)).build());
 
 	public static void registerModEntities() {
 		Forestal.LOGGER.debug("Registering ForestalEntities for " + Forestal.MOD_ID);
 
-		FabricDefaultAttributeRegistry.register(ForestalEntities.GRIZZLY_BEAR, GrizzlyBearEntity.createGrizzlyBearAttributes());
+//		FabricDefaultAttributeRegistry.register(ForestalEntities.DEER, DeerEntity.createDeerAttributes());
+		FabricDefaultAttributeRegistry.register(ForestalEntities.GRIZZLY_BEAR,
+				GrizzlyBearEntity.createBearAttributes());
 	}
 }

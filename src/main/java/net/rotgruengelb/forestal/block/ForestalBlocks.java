@@ -3,6 +3,7 @@ package net.rotgruengelb.forestal.block;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -14,6 +15,8 @@ public class ForestalBlocks {
 
 	public static final Block GRIZZLY_PLUSHIE = registerBlock("grizzly_plushie", new PlushieBlock(FabricBlockSettings.create()
 			.nonOpaque().breakInstantly().noBlockBreakParticles().sounds(BlockSoundGroup.WOOL)));
+	public static final Block PUFFED_DANDELION = registerBlock("puffed_dandelion",
+			new PuffedDandelionBlock(FabricBlockSettings.copyOf(Blocks.DANDELION)));
 
 	private static Block registerBlockNoItem(String name, Block block) {
 		return Registry.register(Registries.BLOCK, new Identifier(Forestal.MOD_ID, name), block);

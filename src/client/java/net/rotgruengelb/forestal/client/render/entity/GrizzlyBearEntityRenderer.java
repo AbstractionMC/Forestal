@@ -24,13 +24,13 @@ public class GrizzlyBearEntityRenderer extends GeoEntityRenderer<GrizzlyBearEnti
 	}
 
 	@Override
-	public void render(GrizzlyBearEntity grizzlyBear, float entityYaw, float partialTick, MatrixStack poseStack, VertexConsumerProvider bufferSource, int packedLight) {
-		if (grizzlyBear.isBaby()) {
+	public void render(GrizzlyBearEntity grizzlyBearEntity, float entityYaw, float partialTick, MatrixStack poseStack, VertexConsumerProvider bufferSource, int packedLight) {
+		if (grizzlyBearEntity.isBaby()) {
 			poseStack.scale(0.6F, 0.6F, 0.6F);
 		}
-		if (grizzlyBear.isSleeping()) {
+		if (grizzlyBearEntity.isSleeping()) {
 			poseStack.translate(0, -0.5, 0);
 		}
-		super.render(grizzlyBear, entityYaw, partialTick, poseStack, bufferSource, packedLight);
+		super.render(grizzlyBearEntity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
 	}
 }
